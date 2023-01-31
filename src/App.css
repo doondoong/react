@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+.title {
+  color: orange;
+}
+
+.profile {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  box-shadow: 7px 5px 23px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 7px 5px 23px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 5px 23px -9px rgba(0,0,0,0.75);
+  margin-bottom: 14px;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.new {
+  position: absolute;
+  top: 10%;
+  right: 23%;
+  font-size: 14px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.6rem;
+  background-color: aquamarine;
+  text-align: center;
+  font-weight: bold;
+}
+
+.avater {
+  position: relative;
+}
