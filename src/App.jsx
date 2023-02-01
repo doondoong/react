@@ -3,6 +3,7 @@ import React,{useEffect, useState} from 'react';
 export default function App() {
     const url = 'https://openapi.gg.go.kr/Kidscafe'
     const prams = {
+        Key: "5bd2875e523143338161caeb75b2f4d5",
         Type: "JSON",
         pindex: 1,
         pSize: 50,
