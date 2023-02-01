@@ -29,6 +29,7 @@ export default function App() {
                 <th>업체명</th>
                 <th>주소</th>
                 <th>오픈일</th>
+                <th>영업상태</th>
                 <tbody>
                 {data?.map((item, index) => {
                     return (
@@ -36,6 +37,7 @@ export default function App() {
                         <td>{item.BIZPLC_NM}</td>
                         <td>{item.REFINE_LOTNO_ADDR}</td>
                         <td>{item.LICENSG_DE}</td> 
+                        <td>{item.BSN_STATE_NM}</td> 
                     </tr>)
                 })} 
                 </tbody>
