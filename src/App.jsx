@@ -4,7 +4,6 @@ export default function App() {
 
     fetch("https://cors-anywhere.herokuapp.com/https://openapi.gg.go.kr/Kidscafe",{
         method: "POST",
-        credentials: "include",
         headers: {
             "Content-Type": "application/json",
         },
