@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-export default function SelectBox({setSigun_nm}) {
+export default function SelectBox({sigun_nm, setSigun_nm}) {
+
     const handleChange = (e) => {
         setSigun_nm(e.target.value)
     }
     return (
-        <select onChange={handleChange} name='choice' style={{width: '150px', height: '30px', marginTop: '10px', marginLeft: '10px'}}>
+        <select onChange={handleChange} value={sigun_nm} name='choice' style={{width: '150px', height: '30px', marginTop: '10px', marginLeft: '10px'}}>
             <option value="구리시 ">구리시</option>
             <option value="남양주시">남양주시</option>
         </select>
