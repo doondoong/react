@@ -1,8 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import Loading from './components/Loading'
+import SelectBox from './components/SelectBox';
 export default function App() {
     const [data, setData ] = useState()
-    const url = 'https://proxy.cors.sh/https://openapi.gg.go.kr/Kidscafe?Key=5bd2875e523143338161caeb75b2f4d5&pindex=1&pSize=50&SIGUN_NM=남양주시'
+    const [sigun_nm, setSigun_nm ] = useState('구리시 ')
+    
     async function postData(url = '') {
         const response = await fetch(url, {
             method: "POST",
@@ -14,16 +16,18 @@ export default function App() {
         return response.json()
     }
     useEffect(()=>{
+        const url = `https://proxy.cors.sh/https://openapi.gg.go.kr/Kidscafe?Key=5bd2875e523143338161caeb75b2f4d5&pindex=1&SIGUN_NM=${sigun_nm}&pSize=100`
         postData(url).then((data) => {
             console.log(data,'firstData')
             setData(data.Kidscafe[1].row)
         })
-    },[])
+    },[sigun_nm])
 
-    console.log(data ,'data')
+    console.log(sigun_nm ,'sigun_nm')
     
     return data ? (
         <div>
+            <SelectBox setSigun_nm={setSigun_nm} />
             <table border="1" style={{marginTop: '20px'}}>
                 <thead>
                 </thead>
