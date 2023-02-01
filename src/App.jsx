@@ -12,7 +12,7 @@ export default function App() {
         let response = await fetch(url, {
             method: 'POST',
             headers: {
-                Authentication: 'f7046f5cf7444b2798ba3df8a1aae833'
+                Authentication: '5bd2875e523143338161caeb75b2f4d5'
             },
             body: JSON.stringify()
         });
