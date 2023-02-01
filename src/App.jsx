@@ -24,7 +24,7 @@ export default function App() {
     
     return data ? (
         <div>
-            <table border="1">
+            <table border="1" style={{marginTop: '20px'}}>
                 <thead>
                 </thead>
                 <th>업체명</th>
@@ -33,6 +33,9 @@ export default function App() {
                 <th>영업상태</th>
                 <tbody>
                 {data?.map((item, index) => {
+                    if(item.BSN_STATE_NM === '폐업') {
+                        return 
+                    }
                     return (
                     <tr>
                         <td>{item.BIZPLC_NM}</td>
