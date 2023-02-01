@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-
+import Loading from './components/Loading'
 export default function App() {
     const [data, setData ] = useState()
     const url = 'https://proxy.cors.sh/https://openapi.gg.go.kr/Kidscafe?Key=5bd2875e523143338161caeb75b2f4d5&pindex=1&pSize=50&SIGUN_NM=남양주시'
@@ -21,7 +21,8 @@ export default function App() {
     },[])
 
     console.log(data ,'data')
-    return (
+    
+    return data ? (
         <div>
             <table border="1">
                 <thead>
@@ -43,6 +44,6 @@ export default function App() {
                 </tbody>
             </table>
         </div>
-    );
+    ) : <Loading />
 }
 
