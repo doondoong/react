@@ -2,8 +2,9 @@ import React,{useEffect, useState} from 'react';
 
 export default function App() {
 
-    fetch("https://openapi.gg.go.kr/Kidscafe",{
+    fetch("https://cors-anywhere.herokuapp.com/https://openapi.gg.go.kr/Kidscafe",{
         method: "GET",
+        credentials: "include",
         headers: {
             "Content-Type": "application/json",
         },
