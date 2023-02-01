@@ -6,6 +6,7 @@ export default function App() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "X-Auth-Token": "5bd2875e523143338161caeb75b2f4d5",
         },
         body: JSON.stringify({
             Key: "5bd2875e523143338161caeb75b2f4d5",
