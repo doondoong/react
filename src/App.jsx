@@ -15,7 +15,7 @@ export default function App() {
         //     pSize: 50,
         //     SIGUN_NM: "남양주시"
         // }),
-    }).then((response) => console.log(response))
+    }).then((response) => console.log(JSON.parse(response)))
 
     return (
         <div>
