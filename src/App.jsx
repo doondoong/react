@@ -2,9 +2,10 @@ import React,{useEffect, useState} from 'react';
 
 export default function App() {
 
-    fetch("https://openapi.gg.go.kr/Kidscafe",{
+    fetch("https://proxy.cors.sh/https://openapi.gg.go.kr/Kidscafe",{
         method: "POST",
         headers: {
+            'x-cors-api-key': 'temp_2f26b6f293511613cad7af0618d3f4dc',
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
