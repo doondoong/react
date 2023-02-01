@@ -15,6 +15,7 @@
     "use-immer": "^0.8.1",
     "web-vitals": "^2.1.0"
   },
+  "proxy": "https://openapi.gg.go.kr/Kidscafe",
   "scripts": {
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
