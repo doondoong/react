@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 
 export default function App() {
 
-    fetch("https://openapi.gg.go.kr/Kidscafe",{
+    fetch("https://cors-anywhere.herokuapp.com/https://openapi.gg.go.kr/Kidscafe",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
