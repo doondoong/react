@@ -1,0 +1,6 @@
+const envVars = {
+    cAPI_KEY: process.env.REACT_APP_API_KEY
+}
+
+
+export { envVars };

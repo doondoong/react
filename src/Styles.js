@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+/** 로딩바 */
 export const Background = styled.div`
   position: absolute;
   width: 100vw;
