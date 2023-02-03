@@ -22,8 +22,9 @@ export default function NavBar() {
     // }
     return (
         <NavWrapper>
-            <div className='mt-2 h-2/3 flex flex-row justify-center'>
-                <img className='h-10 w-10 object-fill mr-22' src='doong.png' /> 
+            <div className='mt-3 h-2/3 flex flex-row justify-center'>
+                <img className='h-10 w-10 object-fill mr-5
+                  hover:scale-150' src='doong.png' /> 
                 <Link to='/react' className='text-3xl text-rose-900 font-semibold hover:text-rose-600'>                
                     이둥이네 정보센터
                 </Link>
