@@ -1,16 +1,23 @@
-import React,{useEffect, useState} from 'react';
-import NavBar from './header/NavBar';
-import Kids from './Kids';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Care from './pages/Care';
+import Main from './pages/Main';
+import Root from './pages/Root';
+
+const router = createBrowserRouter([
+    {
+        path: '/react',
+        element: <Root />,
+        errorElement: <p>Not Found 😢</p>,
+        children: [
+            {index: true, element: <Main />},
+            {path: 'care', element: <Care />},
+        ]
+    },
+])
 
 export default function App() {
   
-    return (
-        <>
-            <NavBar />
-            <Kids />
-        </>
-    )
-        
-    
+    return <RouterProvider router={router} />  
 }
 

@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
 import Loading from './components/Loading'
 import SelectBox from './components/SelectBox';
-import useProducts from './hook/use-products';
+import useCareCenter from './hook/use-careCenter';
 
-export default function Kids() {
+export default function CareCenter() {
     
-    const [sigun_nm, setSigun_nm ] = useState('구리시 ')
-    const [loading, data] = useProducts({sigun_nm: sigun_nm})
-    const memo = '키즈카페 목록보기'
+    const [sigun_nm, setSigun_nm ] = useState('구리시')
+    const [loading, data] = useCareCenter({sigun_nm: sigun_nm})
+    const memo = '조리원 목록보기'
+
     return !loading ? (
         <div>
             <SelectBox sigun_nm={sigun_nm} setSigun_nm={setSigun_nm} memo={memo} />
@@ -17,7 +18,10 @@ export default function Kids() {
                         <th className='border border-slate-600'>업체명</th>
                         <th className='border border-slate-600'>주소</th>
                         <th className='border border-slate-600'>오픈일</th>
-                        <th className='border border-slate-600'>영업상태</th>
+                        <th className='border border-slate-600'>간호사수</th>
+                        <th className='border border-slate-600'>조무사수</th>
+                        <th className='border border-slate-600'>영양사수</th>
+                        <th className='border border-slate-600'>영아정원</th>
                     </thead>
                     <tbody>
                     {data?.map((item , index) => {
@@ -27,9 +31,12 @@ export default function Kids() {
                         return (
                         <tr key={index}>
                             <td className='border border-slate-600'>{item.BIZPLC_NM}</td>
-                            <td className='border border-slate-600'>{item.REFINE_LOTNO_ADDR}</td>
+                            <td className='border border-slate-600'>{item.REFINE_ROADNM_ADDR}</td>
                             <td className='border border-slate-600'>{item.LICENSG_DE}</td> 
-                            <td className='border border-slate-600'>{item.BSN_STATE_NM}</td> 
+                            <td className='border border-slate-600 text-center'>{item.NURSE_CNT || '0'}</td> 
+                            <td className='border border-slate-600 text-center'>{item.NURSAID_CNT || '0'}</td> 
+                            <td className='border border-slate-600 text-center'>{item.NUTRST_CNT || '0'}</td> 
+                            <td className='border border-slate-600 text-center'>{item.INFANT_PSN_CAPA || '0'}</td> 
                         </tr>)
                     })} 
                     </tbody>
