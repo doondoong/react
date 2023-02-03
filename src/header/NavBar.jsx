@@ -4,7 +4,8 @@ import styled, {css} from 'styled-components';
 /** 네브바 */
 const NavWrapper = styled.div`
     display: flex;
-    height: 60px;
+    flex-direction: column;
+    height: 110px;
     width: 100%;
     background-color: #F1B4A3;
     align-items: center;
@@ -13,9 +14,20 @@ const NavWrapper = styled.div`
 `;
 
 export default function NavBar() {
+
+    const handleReload = () => {
+        window.location.reload();
+    }
     return (
         <NavWrapper>
-            <h1 className='text-3xl'>이둥이네</h1>
+            <div className='mt-2 h-2/3 flex flex-row justify-center'>
+                <button className='text-3xl text-rose-900 font-semibold hover:text-rose-600'>이둥이네</button>
+            </div>
+            <div className='h-1/3 w-full flex flex-row items-center justify-start space-x-10 p-4'>
+                <button onClick={handleReload} className='text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12'>키즈카페</button>
+                <div className='text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12'>준비중..</div>
+                <div className='text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12'>준비중..</div>
+            </div>
         </NavWrapper>
     );
 }

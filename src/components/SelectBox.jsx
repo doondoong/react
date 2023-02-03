@@ -7,13 +7,13 @@ export default function SelectBox({sigun_nm, setSigun_nm}) {
     }
 
     return (
-        <div className='flex justify-end items-center mr-4 '>
+        <div className='flex justify-between items-center mx-4 mt-3'>
+            <div>✔구리 남양주 조회가능</div>
             <select 
             onChange={handleChange} s
             value={sigun_nm} 
             name='choice' 
-            className='bg-sky-500 hover:bg-sky-700 rounded-lg'
-            style={{width: '150px', height: '30px', marginTop: '10px', marginLeft: '10px'}}>
+            className='bg-sky-500 hover:bg-sky-700 rounded-lg w-36 h-8'>
                 <option value="구리시 ">구리시</option>
                 <option value="남양주시">남양주시</option>
             </select>
