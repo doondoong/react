@@ -25,7 +25,6 @@ export default function useCareCenter({sigun_nm}) {
             setData(data.PostnatalCare[1].row)
         }).catch((e) => {
             setError(`api error: ${e}`)
-            alert(error)
         }).finally(()=>{
             setLoading(false)
         })
