@@ -2,7 +2,7 @@
   "name": "basic",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://doondoong.github.io",
+  "homepage": "http://doondoong.github.io/react",
   "dependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
