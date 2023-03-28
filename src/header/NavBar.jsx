@@ -39,13 +39,13 @@ export default function NavBar() {
       </div>
       <nav className="h-1/3 w-full flex flex-row items-center justify-start space-x-10 p-4">
         <Link
-          to="/react/goGamping"
+          to="/react/todo"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
           할일
         </Link>
         <Link
-          to="/react"
+          to="/react/kids"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
           키즈카페
@@ -57,12 +57,12 @@ export default function NavBar() {
           조리원
         </Link>
 
-        <Link
+        {/* <Link
           to="/react/checkPage"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
           자동화
-        </Link>
+        </Link> */}
       </nav>
     </NavWrapper>
   );

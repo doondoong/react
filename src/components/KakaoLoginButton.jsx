@@ -1,9 +1,11 @@
 import React from 'react';
 import { envVars } from '../vars/envVars';
 import kakaoImg from './kakao.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const KakaoLoginButton = () => {
-  const { API_KAKAO_KEY, API_CAMP_KEY } = envVars;
+  const navigate = useNavigate();
+  const { API_KAKAO_KEY } = envVars;
   const loginWithKakao = () => {
     // 카카오 SDK가 초기화되어 있는지 확인합니다.
     if (!window.Kakao.isInitialized()) {
@@ -14,7 +16,9 @@ const KakaoLoginButton = () => {
     window.Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function (authObj) {
-        console.log(authObj);
+        const { access_token } = authObj;
+        localStorage.setItem('access_token', access_token);
+        navigate('/react/todo');
       },
       fail: function (err) {
         console.log(err);

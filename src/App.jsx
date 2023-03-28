@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Care from './pages/Care';
-import Main from './pages/Main';
+import KidsPage from './pages/KidsPage';
 import Root from './pages/Root';
 import Camp from './pages/Camp';
 import Login from './pages/Login';
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <Login /> },
       { path: 'todo', element: <Camp /> },
       { path: 'care', element: <Care /> },
-      { path: 'goGamping', element: <Main /> },
+      { path: 'kids', element: <KidsPage /> },
       { path: 'checkPage', element: <CheckPage /> },
     ],
   },
