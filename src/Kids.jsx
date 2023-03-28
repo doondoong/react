@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Loading from './components/Loading';
 import SelectBox from './components/SelectBox';
 import useProducts from './hook/use-products';
+import { useQueryClient } from '@tanstack/react-query';
 
 export default function Kids() {
   const [sigun_nm, setSigun_nm] = useState('구리시 ');
   const [isLoading, error, kids] = useProducts({ sigun_nm: sigun_nm });
   const memo = '키즈카페 목록보기';
-
+  const client = useQueryClient();
   if (isLoading) {
     return <Loading />;
   }
@@ -19,7 +20,7 @@ export default function Kids() {
         <table className="border border-slate-400 mt-2 w-full mx-2">
           <thead className="bg-gray-400">
             <th className="border border-slate-600">업체명</th>
-            <th className="border border-slate-600">주소</th>
+            <th className="border borer-slate-600">주소</th>
             <th className="border border-slate-600">오픈일</th>
             <th className="border border-slate-600">영업상태</th>
           </thead>
@@ -49,6 +50,14 @@ export default function Kids() {
           </tbody>
         </table>
       </div>
+      <button
+        className="border-solid border-slate-600 mt-4 ml-4 p-2"
+        onClick={() => {
+          client.invalidateQueries(['kids', sigun_nm]);
+        }}
+      >
+        새로고침
+      </button>
     </div>
   );
 }

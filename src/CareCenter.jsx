@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Loading from './components/Loading';
 import SelectBox from './components/SelectBox';
 import useCareCenter from './hook/use-careCenter';
+import { useQueryClient } from '@tanstack/react-query';
 
 export default function CareCenter() {
   const [sigun_nm, setSigun_nm] = useState('구리시');
   const [isLoading, error, care] = useCareCenter({ sigun_nm: sigun_nm });
   const memo = '조리원 목록보기';
-
+  const client = useQueryClient();
   if (isLoading) {
     return <Loading />;
   }
@@ -61,6 +62,14 @@ export default function CareCenter() {
           </tbody>
         </table>
       </div>
+      <button
+        className="border-solid border-slate-600 mt-4 ml-4 p-2"
+        onClick={() => {
+          client.invalidateQueries(['Care', sigun_nm]);
+        }}
+      >
+        새로고침
+      </button>
     </div>
   );
 }

@@ -39,6 +39,12 @@ export default function NavBar() {
       </div>
       <nav className="h-1/3 w-full flex flex-row items-center justify-start space-x-10 p-4">
         <Link
+          to="/react/goGamping"
+          className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
+        >
+          할일
+        </Link>
+        <Link
           to="/react"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
@@ -50,11 +56,12 @@ export default function NavBar() {
         >
           조리원
         </Link>
+
         <Link
-          to="/react/goGamping"
+          to="/react/checkPage"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
-          할일
+          자동화
         </Link>
       </nav>
     </NavWrapper>

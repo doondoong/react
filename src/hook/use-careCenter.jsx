@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { envVars } from '../vars/envVars';
 import { useQuery } from '@tanstack/react-query';
 
