@@ -11,7 +11,7 @@ import CheckPage from './pages/CheckPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/react',
     element: <Root />,
     errorElement: <p>Not Found 😢</p>,
     children: [
