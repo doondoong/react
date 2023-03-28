@@ -3,11 +3,13 @@ import { envVars } from '../vars/envVars';
 import kakaoImg from './kakao.jpg';
 
 const KakaoLoginButton = () => {
+  const { API_KAKAO_KEY, API_CAMP_KEY } = envVars;
+  console.log(API_KAKAO_KEY, 'API_KAKAO_KEY');
   const loginWithKakao = () => {
     // 카카오 SDK가 초기화되어 있는지 확인합니다.
     if (!window.Kakao.isInitialized()) {
       // 카카오 SDK를 초기화합니다.
-      window.Kakao.init('2f5442b7934926b3a883e94888560163');
+      window.Kakao.init(API_KAKAO_KEY);
     }
     // 카카오 로그인 버튼을 생성합니다.
     window.Kakao.Auth.createLoginButton({
