@@ -4,7 +4,6 @@ import kakaoImg from './kakao.jpg';
 
 const KakaoLoginButton = () => {
   const { API_KAKAO_KEY, API_CAMP_KEY } = envVars;
-  console.log(API_KAKAO_KEY, 'API_KAKAO_KEY');
   const loginWithKakao = () => {
     // 카카오 SDK가 초기화되어 있는지 확인합니다.
     if (!window.Kakao.isInitialized()) {
