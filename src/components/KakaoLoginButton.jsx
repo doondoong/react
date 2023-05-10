@@ -4,6 +4,7 @@ import kakaoImg from './kakao.jpg';
 import { useNavigate } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
+import { MainButton } from '../stories/Button.stories';
 
 /** 전체 창 */
 const LoginWrapper = styled.div`
@@ -76,7 +77,7 @@ const KakaoLoginButton = () => {
         <label htmlFor="">PASSWORD</label>
         <input type="text" placeholder="PASSWORD"></input>
       </InputWrapper>
-      <LoginButton onClick={loginWithKakao}>이메일 로그인</LoginButton>
+      <MainButton />
       <button onClick={loginWithKakao}>
         <img src={kakaoImg} alt="카카오 로그인" id="kakao-login-btn" />
       </button>
