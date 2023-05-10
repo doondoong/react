@@ -5,7 +5,7 @@ import { CampWrapper, ItemWrapper } from '../Styles';
 import { DarkModeProvider } from '../context/DarkModeContext';
 const filters = ['all', 'active', 'completed'];
 
-export default function Camp() {
+export default function Todo() {
   const [filter, setFilter] = useState(filters[0]);
   return (
     <DarkModeProvider>

@@ -16,8 +16,14 @@ const KakaoLoginButton = () => {
     window.Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function (authObj) {
-        const { access_token } = authObj;
-        localStorage.setItem('access_token', access_token);
+        const userToken = {
+          accessToken: authObj.access_token,
+          refreshToken: authObj.refresh_token,
+          expiresAt: new Date().getTime() + authObj.expires_in * 1000,
+          scopes: authObj.scopes,
+        };
+        // 추출한 정보를 로컬 스토리지에 저장합니다.
+        localStorage.setItem('userToken', JSON.stringify(userToken));
         navigate('/react/todo');
       },
       fail: function (err) {
