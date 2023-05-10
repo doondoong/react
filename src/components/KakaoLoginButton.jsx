@@ -3,6 +3,40 @@ import { envVars } from '../vars/envVars';
 import kakaoImg from './kakao.jpg';
 import { useNavigate } from 'react-router-dom';
 
+import styled, { css } from 'styled-components';
+
+/** 전체 창 */
+const LoginWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+const LoginButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px;
+  padding: 10px;
+  background-color: #48eba4;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px;
+  padding: 10px;
+  margin-bottom: 10px;
+`;
+
 const KakaoLoginButton = () => {
   const navigate = useNavigate();
   const { API_KAKAO_KEY } = envVars;
@@ -33,9 +67,20 @@ const KakaoLoginButton = () => {
   };
 
   return (
-    <button onClick={loginWithKakao}>
-      <img src={kakaoImg} alt="카카오 로그인" id="kakao-login-btn" />
-    </button>
+    <LoginWrapper>
+      <InputWrapper>
+        <label htmlFor="">ID</label>
+        <input type="text" placeholder="ID" />
+      </InputWrapper>
+      <InputWrapper>
+        <label htmlFor="">PASSWORD</label>
+        <input type="text" placeholder="PASSWORD"></input>
+      </InputWrapper>
+      <LoginButton onClick={loginWithKakao}>이메일 로그인</LoginButton>
+      <button onClick={loginWithKakao}>
+        <img src={kakaoImg} alt="카카오 로그인" id="kakao-login-btn" />
+      </button>
+    </LoginWrapper>
   );
 };
 
