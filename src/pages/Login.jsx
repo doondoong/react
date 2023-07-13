@@ -10,9 +10,5 @@ export const ButtonWrapper = styled.div`
 `;
 
 export default function Login() {
-  return (
-    <ButtonWrapper>
-      <KakaoLoginButton />
-    </ButtonWrapper>
-  );
+  return <ButtonWrapper>{/* <KakaoLoginButton /> */}</ButtonWrapper>;
 }
