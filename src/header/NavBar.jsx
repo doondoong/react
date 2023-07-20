@@ -8,7 +8,7 @@ const NavWrapper = styled.div`
   flex-direction: column;
   height: 110px;
   width: 100%;
-  background-color: #f1b4a3;
+  background-color: #588dd7;
   align-items: center;
   justify-content: center;
   ${(props) =>
@@ -25,37 +25,37 @@ export default function NavBar() {
   return (
     <NavWrapper>
       <div className="mt-3 h-2/3 flex flex-row justify-center">
-        <img
+        {/* <img
           className="h-10 w-10 object-fill mr-5
                   hover:scale-150"
           src={`${process.env.PUBLIC_URL}/doong.png`}
-        />
+        /> */}
         <Link
           to="/react"
           className="text-3xl text-rose-900 font-semibold hover:text-rose-600"
         >
-          이둥이네 정보센터
+          공공API 기상확인
         </Link>
       </div>
       <nav className="h-1/3 w-full flex flex-row items-center justify-start space-x-10 p-4">
-        <Link
+        {/* <Link
           to="/react/todo"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
           할일
-        </Link>
+        </Link> */}
         <Link
           to="/react/kids"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
-          키즈카페
+          기상센터
         </Link>
-        <Link
+        {/* <Link
           to="/react/care"
           className="text-rose-900 hover:text-rose-600 font-semibold hover:origin-center hover:rotate-12"
         >
           조리원
-        </Link>
+        </Link> */}
 
         {/* <Link
           to="/react/checkPage"
